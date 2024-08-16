@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="body">
+    <div class="main">
+      <h1>Sign Up</h1>
+      <form id="signupForm">
+        <div class="center">
+          <div>
+            <label for="user"></label>
+            <input
+              type="text"
+              name="username"
+              id="user"
+              required
+              placeholder="Username"
+            />
+          </div>
+          <br />
+          <div>
+            <label for="email"></label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              required
+              placeholder="Email Id"
+            />
+          </div>
+          <br />
+          <div>
+            <label for="pass"></label>
+            <input
+              type="password"
+              name="password"
+              id="pass"
+              required
+              placeholder="Password"
+              minlength="5"
+              maxlength="15"
+            />
+          </div>
+          <br>
+          <div class="se">
+            <label for="as"></label>
+            <select id="as" name="type" required>
+                <option value="">Account type</option>
+                <option value="student">Student</option>
+                <option value="administrator">Administrator</option> 
+            </select> 
+            <br>            
+            <br>
+          </div>
+          <div>
+            <button type="submit" class="main1">Create Account</button>
+          </div>
+          <br />
+          <div>
+            <button type="button" class="back" onclick="window.location.href='index.html';">Back to login</button>
+          </div>
+      </form>
+    </div>
+
+    <script>
+      document.getElementById('signupForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevents the form from submitting in the traditional way
+
+        // Validate form (optional, as HTML required already does this)
+        if (this.checkValidity()) {
+          // Redirect to main.html if the form is valid
+          window.location.href = 'main.html';
+        }
+      });
+    </script>
+  </body>
+</html>
+
+
+
